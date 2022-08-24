@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block title %} {{name}} {% endblock %}
+
+{% block content %}
+<h1 align="center">My Courses</h1>
+<div class="container">
+    <div class="row">
+        {% for course in user.create_class %}
+        <div class="col-md-3 pt-4">
+            <div class="card" align="center" style="background-color:rgb(219, 215, 231)">
+                <h4 class="card-title" style="color:rgb(214, 140, 72)">{{ course.coursename }} ({{ course.coursetitle
+                    }})
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted"">{{ course.description }}</h5>
+                <h6 class=" card-subtitle mb-2 text-muted">Total Course price : {{ course.courseprice }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">use this course code : {{ course.coursecode }}</h6>
+                    <div class="div">
+                        <a href="/profile/{{user.fullname}}/{{course.coursetitle}}" class="card-link btn btn-success">Open Course</a>
+                    </div>
+                    <br>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br><br><br>
+
+<h1 align="center">Joined Courses</h1>
+<div class="container">
+    <div class="row">
+        {% for course in join %}
+        <div class="col-md-3 pt-4">
+            <div class="card" align="center" style="background-color:rgb(219, 215, 231)">
+                <h4 class="card-title" style="color:rgb(214, 140, 72)">{{ course.coursename }} ({{ course.coursetitle
+                    }})
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted"">{{ course.description }}</h5>
+                <h6 class=" card-subtitle mb-2 text-muted">Total Course price : {{ course.courseprice }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">use this course code : {{ course.coursecode }}</h6>
+                    <div class="div">
+                        <a href="/profile/{{user.fullname}}/{{course.coursetitle}}/assinments" class="card-link btn btn-success">Submit Assignment</a>
+                    </div>
+                    <br>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}  Join Course {% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h3 align="center">Join a Course</h3>
+    <div class="form-group">
+        <label for="coursetitle">Enter Course Title</label>
+        <input type="text" class="form-control" id="coursetitle" name="coursetitle" placeholder="Enter Course Title" />
+    </div>
+    <div class="form-group">
+        <label for="coursecode">Enter Course Code</label>
+        <input type="text" class="form-control" id="coursecode" name="coursecode" placeholder="Enter Course Name" />
+    </div>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </div>
+    
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %} Index {% endblock %}
+
+{% block content %}
+<h1 align="center">Choose your Courses</h1>
+<div class="container">
+    <div class="row">
+        {% for course in courses %}
+        <div class="col-md-3 pt-4">
+            <div class="card" align="center" style="background-color:rgb(219, 215, 231)">
+                <h4 class="card-title"  style="color:rgb(214, 140, 72)">{{ course.coursename }} ({{ course.coursetitle }})
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted"">{{ course.description }}</h5>
+                <h6 class=" card-subtitle mb-2 text-muted">Total Course price : {{ course.courseprice }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">use this course code : {{ course.coursecode }}</h6>
+                <div class="div">
+                    <a href="/login" class="card-link">Add to cart</a>
+                    <a href="/login" class="card-link">Purchase Course</a>
+                </div>
+                <br>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
